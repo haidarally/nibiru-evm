@@ -19,7 +19,7 @@ flock -x /tmp/rocksdb-linux-headers-lock -c "wget -c https://github.com/NibiruCh
 if [ "$TARGET" == "linux_amd64_v1" ]; then
   apt-get -o DPkg::Lock::Timeout=60 install --no-install-recommends -y libzstd-dev:amd64 libsnappy-dev:amd64 liblz4-dev:amd64 libbz2-dev:amd64 zlib1g-dev:amd64
 
-  wget -c https://github.com/CosmWasm/wasmvm/releases/download/v${WASMVM_VERSION}/libwasmvm_muslc.x86_64.a -O /tmp/libwasmvm_muslc.x86_64.a
+  wget -c https://github.com/CosmWasm/wasmvm/releases/download/v2.0.1/libwasmvm_muslc.x86_64.a -O /tmp/libwasmvm_muslc.x86_64.a
   cp /tmp/libwasmvm_muslc.x86_64.a /usr/lib/x86_64-linux-gnu/libwasmvm_muslc.a
 
   wget -c https://github.com/NibiruChain/gorocksdb/releases/download/v${ROCKSDB_VERSION}/librocksdb_${ROCKSDB_VERSION}_linux_amd64.tar.gz -O /tmp/librocksdb_${ROCKSDB_VERSION}_linux_amd64.tar.gz
